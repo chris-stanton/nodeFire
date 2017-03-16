@@ -179,7 +179,7 @@ Base Mode - Authenticated Post:
 Hard Mode - Authorized Post:
 
 1.
-- [ ] The new secrets a user creates should only have a secrecy level at or below the clearance level of the current user. This will need to be done with an authenticated post that sends a token. Any logic to determine the clearance level of the user should be done on the backend (because if it is done on the front end, it is not actually secure. Examples:
+- [x] The new secrets a user creates should only have a secrecy level at or below the clearance level of the current user. This will need to be done with an authenticated post that sends a token. Any logic to determine the clearance level of the user should be done on the backend (because if it is done on the front end, it is not actually secure. Examples:
 
 If Huck has a clearance level of 5, he can create new secret with a secrecy level of 1, 2, 3, 4, or 5.
 If Kris has a clearance level of 3, he can create new secret with a secrecy level of 1, 2, or 3.

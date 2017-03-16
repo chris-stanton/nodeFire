@@ -1,9 +1,9 @@
 
 
 <h2>Home View</h2>
-  {{hc.testMessage}}
+  {{hc.newMessage}}
 <form class="" action="index.html" method="post">
   <input type="text" name="" value="" ng-model="hc.newMessage.secretText"/>
   <input type="number" name="" value="" ng-model="hc.newMessage.secrecyLevel"/>
-  <button type="button" name="button" ng-submit="hc.sendNewMessage(newMessage)">SUBMIT!</button>
+  <button type="button" name="button" ng-click="hc.sendNewMessage(hc.newMessage)">SUBMIT!</button>
 </form>

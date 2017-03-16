@@ -16,6 +16,7 @@ app.use(express.static('public'));
 
 //gives us req.body
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 //database connection
 mongoConnection.connect();

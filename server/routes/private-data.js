@@ -32,4 +32,10 @@ router.get("/", function(req, res){
   });
 });
 
+
+router.post("/", function(req, res){
+console.log("server post route hit", req.body);
+
+});
+
 module.exports = router;

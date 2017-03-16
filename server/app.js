@@ -13,16 +13,19 @@ app.get('/', function(req, res){
 });
 
 app.use(express.static('public'));
+
+//gives us req.body
 app.use(bodyParser.json());
 
+//database connection
 mongoConnection.connect();
 
-// Decodes the token in the request header and attaches the decoded token to req.decodedToken on the request.
+//Decodes the token in the request header and attaches the decoded token to req.decodedToken on the request.
 app.use(decoder.token);
 
 /* Whatever you do below this is protected by your authentication. */
 
-// This is the route for your secretData. The request gets here after it has been authenticated.
+//This is the route for your secretData. The request gets here after it has been authenticated.
 app.use("/privateData", privateData);
 
 app.listen(portDecision, function(){

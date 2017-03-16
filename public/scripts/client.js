@@ -45,3 +45,8 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
     });
   };
 });
+
+// //button will trigger this function
+// self.someTrigger = function (){
+//   auth.$onAuthStateChanged
+// }

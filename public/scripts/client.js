@@ -1,5 +1,32 @@
-var app = angular.module("sampleApp", ["firebase"]);
+var app = angular.module("sampleApp", ["firebase", 'ngRoute']);
+
+
+
+
+// var myApp = angular.module('myApp', ['ngRoute']);
+//
+// console.log('angular working');
+//
+app.config(['$routeProvider', function($routeProvider) {
+  console.log('routes are doing good');
+  $routeProvider
+    .when('/home', {
+      templateUrl: '/views/home.html',
+      controller: 'HomeController',
+      controllerAs: 'hc'
+    })
+    .when('/secrets', {
+      templateUrl: '/views/secrets.html',
+      controller: 'SecretsController',
+      controllerAs: 'sec'
+    })
+    .otherwise({
+      redirectTo: 'home'
+    })
+}]);//end of myApp
+
 app.controller("SampleCtrl", function($firebaseAuth, $http) {
+  console.log("sample controller");
   var auth = $firebaseAuth();
   var self = this;
 
@@ -17,10 +44,12 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
   // this is where we put most of our logic so that we don't duplicate
   // the same things in the login and the logout code
   auth.$onAuthStateChanged(function(firebaseUser){
+    console.log("auth is doing stuff");
     // firebaseUser will be null if not logged in
     if(firebaseUser) {
       // This is where we make our call to our server
       firebaseUser.getToken().then(function(idToken){
+        console.log("client.js line 27");
         $http({
           method: 'GET',
           url: '/privateData',
@@ -45,8 +74,3 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
     });
   };
 });
-
-// //button will trigger this function
-// self.someTrigger = function (){
-//   auth.$onAuthStateChanged
-// }

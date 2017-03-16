@@ -172,10 +172,9 @@ Start with the mongo-authorization of the nodeFire repository. Since this applic
 
 Base Mode - Authenticated Post:
 1.
-- [ ] Allow an authenticated user to create a new secret.
+- [x] Allow an authenticated user to create a new secret.
 
-If the user is logged in, they will see a form that allows them to add a new secret. The server should confirm (with the id token) that the user is authenticated, and then allow the secret to be added to the database.
-
+- [x] If the user is logged in, they will see a form that allows them to add a new secret. The server should confirm (with the id token) that the user is authenticated, and then allow the secret to be added to the database.
 
 Hard Mode - Authorized Post:
 
@@ -188,7 +187,7 @@ If Luke has a clearance level of 3, he can create new secret with a secrecy leve
 
 Pro Mode:
 1.
- - [X] Your site needs another view. Create a second route and view on the front end that is available only to users who are authenticated. Examples:
+ - [x] Your site needs another view. Create a second route and view on the front end that is available only to users who are authenticated. Examples:
 
 If a user logs in, they will see a link to a users view. Ideally, this route will be /#/users
 If a user is not logged in and attempts to navigate to /#/admin, they should be redirected to the login page

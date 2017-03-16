@@ -1,8 +1,5 @@
 var app = angular.module("sampleApp", ["firebase", 'ngRoute']);
 
-
-
-
 // var myApp = angular.module('myApp', ['ngRoute']);
 //
 // console.log('angular working');
@@ -11,12 +8,12 @@ app.config(['$routeProvider', function($routeProvider) {
   console.log('routes are doing good');
   $routeProvider
     .when('/home', {
-      templateUrl: '/views/home.html',
+      templateUrl: '/views/templates/home.html',
       controller: 'HomeController',
       controllerAs: 'hc'
     })
     .when('/secrets', {
-      templateUrl: '/views/secrets.html',
+      templateUrl: '/views/templates/secrets.html',
       controller: 'SecretsController',
       controllerAs: 'sec'
     })
